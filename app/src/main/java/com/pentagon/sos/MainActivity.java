@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         }
         MyLatLng myLatLng = getMyLatLang();
         String url = "http://maps.google.com/maps?q=" + myLatLng.getLatitude() + "," + myLatLng.getLongitude();
-        sendSMS(phoneNum, "My location: " + url);
+        sendSMS(phoneNum, "My Location: " + url);
     }
 
     private MyLatLng getMyLatLang(){
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_SEND_SMS: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    Toast.makeText(getApplicationContext(), "Permision granted.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Permission granted! Try again", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "SMS failed, please try again.", Toast.LENGTH_LONG).show();
                     return;
